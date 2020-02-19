@@ -1,7 +1,7 @@
 # Write your code here.
 
-katz_deli = []
-
+katz_deli = [] #[2,3,4]
+ 
 def line(deli)
   if deli.empty?
     puts "The line is currently empty."
@@ -12,9 +12,17 @@ def line(deli)
   end
 end
 
-def take_a_number(deli, name)
-  deli << name
-  puts "Welcome, #{name}. You are number #{deli.length} in line."
+# def take_a_number(deli, name)
+#   deli << name
+#   puts "Welcome, #{name}. You are number #{deli.length} in line."
+# end
+
+def get_a_number(deli)
+  current_number = deli[-1] unless deli.empty?
+  current_number ||= 0
+  
+  deli << (current_number + 1)
+  puts "You are number #{deli[-1]!}"
 end
 
 def now_serving(deli)
